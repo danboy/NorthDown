@@ -12,9 +12,11 @@ get_header(); ?>
       $menu_type = the_title('','',false);
     ?>
 		<div id="primary">
-      <div id="content" role="main">
+      <div id="content" class="page" role="main">
         <article>
-          <h1><?php echo the_title(); ?></h1>
+          <header>
+            <h1><?php echo the_title(); ?></h1>
+          </header>
           <?php
             foreach ($categories as $menu_category){
               $args = array( 

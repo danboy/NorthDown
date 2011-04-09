@@ -13,33 +13,36 @@ Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-
 /* =Structure
 -------------------------------------------------------------- */
 html {
-  background: #431b09 url(images/textures/wood-bac.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: 100% 100%;
-  -o-background-size: cover;
-  background-size: cover;
+  background: #FFA;
+  background: rgba(255, 255, 187, 0.8) url(images/gradient.png) no-repeat center top;
 }
 
 header,#main,footer{
   padding: 10px;
 }
-header h1{
-  font-family: "Arvo", "Bevan", arial, sans-serif;
+header#branding h1{
+  font-family: "Anton", "Bevan", arial, sans-serif;
   font-weight: normal;
   color: #fff;
   text-decoration: none;
   margin-bottom: 0;
+  background: url(images/logo.png) no-repeat top;
+  width:400px;
+  height:200px;
+  float: left;
 }
-header h1 a{
+header#branding h1 a{
   text-decoration: none;
   color: #fff;
+  display:block;
+  width:100%;
+  height:100%;
+  text-indent:-999em;
 }
 #page {
 	display: block;
 	margin: 1em auto;
   width: 960px;
-  background: #333;
-  background: rgba(24, 8, 6, 0.8);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -115,27 +118,64 @@ header h1 a{
 
 /* =Menu
 -------------------------------------------------------------- */
-
 #access {
 	display: block;
 	float: left;
 	margin: 0 auto 1em;
-	width: 100%;
+	width: 540px;
 }
 #access ul {
+  width:540px;
 	list-style: none;
-	margin: 0;
+	margin: 20px 0 0;
 	padding-left: 0;
 }
 #access li {
 	float: left;
 	position: relative;
+  width: 255px;
+  height: 60px;
+  text-align: center;
+  background: #F58026;
+  margin: 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 #access a {
 	display: block;
-	line-height: 2em;
+  font-family: Bevan, 'Cabin Sketch';
+	line-height: 60px;
+  font-size: 30px;
 	padding: 0 1em;
 	text-decoration: none;
+  color: #000;
+}
+#access a:before{
+  content:"\00a0";
+  display:block; /* reduce the damage in FF3.0 */
+  position:absolute;
+  top:0;
+  right:0;
+  width:0;
+  height:0;
+  border-width: 30px 4px 30px 0;
+  border-style:solid;
+  border-color:#f58026 transparent;
+  background: #ffb;
+}
+#access a:after{
+  content:"\00a0";
+  display:block; /* reduce the damage in FF3.0 */
+  position:absolute;
+  top:0;
+  left:0;
+  width:0;
+  height:0;
+  border-width: 30px 0 30px 4px;
+  border-style:solid;
+  border-color:#f58026 transparent;
+  background: #ffb;
 }
 #access ul ul {
 	box-shadow: 0 3px 3px rgba(0,0,0,0.2);
@@ -163,55 +203,58 @@ header h1 a{
 /* =Content
 -------------------------------------------------------------- */
 article{
-  padding: 20px;
-  background: #EEE;
-  background: rgba(255,255,255,.9);
+  padding: 20px 0;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
-}
-article:after { 
-  z-index: -1; 
-  position: absolute; 
-  background: transparent; 
-  width: 70%; 
-  height: 55%; 
-  content: ''; 
-  right: 10px; 
-  bottom: 10px; 
-  transform: skew(15deg) rotate(6deg);
-  -webkit-transform: skew(15deg) rotate(6deg);
-  -moz-transform: skew(15deg) rotate(6deg);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
-  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
-  -moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-article:before { 
-  z-index: -2; 
-  position: absolute; 
-  background: transparent; 
-  width: 70%; 
-  height: 55%; 
-  content: ''; 
-  left: 10px; 
-  bottom: 10px; 
-  transform: skew(-15deg) rotate(-6deg); 
-  -webkit-transform: skew(-15deg) rotate(-6deg); 
-  -moz-transform: skew(-15deg) rotate(-6deg); 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
-  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
-  -moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }
 
+hr.seperator,
 article header{
   margin: 0;
   padding:0 !important;
+  background: #f58026;
+  text-align: center;
+  display: block;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  border: 0 none;
+}
+hr.seperator:after,
+article header:after{
+  content:"\00a0";
+  display:block; /* reduce the damage in FF3.0 */
+  position:absolute;
+  top:0;
+  left:0;
+  width:0;
+  height:0;
+  border-width: 15px 0 15px 4px;
+  border-style:solid;
+  border-color:#f58026 transparent;
+  background: #ffb;
+}
+hr.seperator:before,
+article header:before{
+  content:"\00a0";
+  display:block; /* reduce the damage in FF3.0 */
+  position:absolute;
+  top:0;
+  right:0;
+  width:0;
+  height:0;
+  border-width: 15px 4px 15px 0;
+  border-style:solid;
+  border-color:#f58026 transparent;
+  background: #ffb;
 }
 article header h1{
   color: #000;
+  font-family: Bevan, 'Cabin Sketch';
+  font-weight: normal;
+  font-size: 20px;
 }
 .entry-meta {
 	clear: both;
@@ -424,7 +467,57 @@ article.comment {
 /* =Footer
 -------------------------------------------------------------- */
 
-#colophon {
-	padding: 1em 0 0;
+/* Responsive code */
+@media screen and (max-width: 800px) {
+
+#page{
+  width:auto;
+}
+#content.page{
+  width:auto;
+  margin: 0;
 }
 
+}
+@media screen and (max-width: 650px) {
+#page{
+  width:auto;
+  text-align: center;
+}
+#content.page{
+  width:auto;
+}
+header#branding h1{
+  margin: 0 auto;
+  float:none;
+  background-image: url(images/logo-handheld.png);
+  width: 250px;
+  height: 130px;
+}
+#menu{width:100%;}
+#access {
+	display: block;
+	clear:both;
+	margin: 0 auto 1em;
+	width: 100%;
+}
+#access ul {
+	list-style: none;
+	margin: 20px 0 0;
+	padding-left: 0;
+  width: 100%;
+}
+#access li {
+	clear:both;
+	position: relative;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background: #F58026;
+  margin: 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+}

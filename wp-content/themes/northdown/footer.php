@@ -7,7 +7,8 @@
 
 	</div><!-- #main -->
 
-	<footer id="colophon" role="contentinfo">
+	<footer>
+  <hr class="seperator" />
     <ul id="foot">
       <li class="address">
         4222 SOmething Lincoln Ave.

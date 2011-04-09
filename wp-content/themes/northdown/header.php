@@ -7,6 +7,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" /> 
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -29,8 +30,8 @@
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Bevan|Allerta+Stencil|Cabin|Arvo">
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Anton|Luckiest+Guy|Cabin+Sketch:bold|Bevan">
+<link rel="stylesheet" type="text/css" media="screen, projection" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
